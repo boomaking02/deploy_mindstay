@@ -5,7 +5,6 @@ import { makeStyles, createStyles } from '@mui/styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import bathIcon from '@public/static/img/icon/baht.png';
-import ImageSlider from './ImageSlider';
 
 type LiftStyleProps = {
   resort: { id: number; name: string; tags: Array<string>; price: number };
@@ -57,41 +56,25 @@ const ResortLifeStyle: React.FC<LiftStyleProps> = ({ resort }: LiftStyleProps) =
   const classes = useStyles();
   return (
     <Box>
-      <Grid container>
-        <Grid item sm={7}>
-          <ImageSlider
-            resort={{
-              id: 0,
-              name: '',
-              bedroom: 0,
-              bathroom: 0,
-              image: undefined,
-              price: 0,
-            }}
-            handleOpenDialog={() => {
-              throw new Error('Function not implemented.');
-            }}
-          />
-        </Grid>
-        <Grid item sm={5} className={classes.resortDetail}>
-          <Link href="/product">
+      <Grid item sm={5} className={classes.resortDetail}>
+        <Link href="/product">
+          <Box>
+            <Image src={bathIcon} alt="icon" />
             <Box>
-              <Box>
-                <Box>{resort.name}</Box>
-                <Box color="#867F7F">{resort.tags?.join(' ')}</Box>
-              </Box>
-              <Box className={classes.resortPrice}>
-                <Box width="25px" mr="0.5rem">
-                  <Image src={bathIcon} alt="icon" />
-                </Box>
-                <Box fontWeight="bold" mr="0.5rem">
-                  {resort.price.toLocaleString()}
-                </Box>
-                / คืน
-              </Box>
+              <Box>{resort.name}</Box>
+              <Box color="#867F7F">{resort.tags?.join(' ')}</Box>
             </Box>
-          </Link>
-        </Grid>
+            <Box className={classes.resortPrice}>
+              <Box width="25px" mr="0.5rem">
+                <Image src={bathIcon} alt="icon" />
+              </Box>
+              <Box fontWeight="bold" mr="0.5rem">
+                {resort.price.toLocaleString()}
+              </Box>
+              / คืน
+            </Box>
+          </Box>
+        </Link>
       </Grid>
     </Box>
   );
