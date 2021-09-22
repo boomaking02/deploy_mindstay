@@ -76,19 +76,17 @@ const ResortLifeStyle: React.FC<LiftStyleProps> = ({ resort }: LiftStyleProps) =
         <Grid item sm={5} className={classes.resortDetail}>
           <Link href="/product">
             <Box>
-              <Box>
-                <Box>{resort.name}</Box>
-                <Box color="#867F7F">{resort.tags?.join(' ')}</Box>
+              <Box>{resort.name}</Box>
+              <Box color="#867F7F">{resort.tags?.join(' ')}</Box>
+            </Box>
+            <Box className={classes.resortPrice}>
+              <Box width="25px" mr="0.5rem">
+                <Image src={bathIcon} alt="icon" />
               </Box>
-              <Box className={classes.resortPrice}>
-                <Box width="25px" mr="0.5rem">
-                  <Image src={bathIcon} alt="icon" />
-                </Box>
-                <Box fontWeight="bold" mr="0.5rem">
-                  {resort.price.toLocaleString()}
-                </Box>
-                / คืน
+              <Box fontWeight="bold" mr="0.5rem">
+                {resort.price.toLocaleString()}
               </Box>
+              / คืน
             </Box>
           </Link>
         </Grid>
