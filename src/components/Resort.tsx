@@ -3,7 +3,7 @@ import { Box, Grid } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { makeStyles, createStyles } from '@mui/styles';
 import Image from 'next/image';
-import bathIcon from '@src/static/img/icon/baht.png';
+import bathIcon from '@public/static/img/icon/baht.png';
 import ImageSlider from './ImageSlider';
 
 type ResortProps = {

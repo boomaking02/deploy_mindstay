@@ -3,9 +3,9 @@ import { Box, CardMedia, Typography, Link } from '@mui/material/';
 import { makeStyles } from '@mui/styles';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import int1 from '@src/static/img/int1.png';
-import int2 from '@src/static/img/int2.png';
-import int3 from '@src/static/img/int3.png';
+import int1 from '@public/static/img/int1.png';
+import int2 from '@public/static/img/int2.png';
+import int3 from '@public/static/img/int3.png';
 
 const responsive = {
   desktop: {

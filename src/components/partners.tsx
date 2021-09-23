@@ -3,14 +3,14 @@ import { Box, CardMedia, Button, Grid } from '@mui/material/';
 import { Theme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 import 'react-multi-carousel/lib/styles.css';
-import partner1 from '@src/static/img/partner1.png';
-import partner2 from '@src/static/img/partner2.png';
-import partner3 from '@src/static/img/partner3.png';
-import partner4 from '@src/static/img/partner4.png';
-import partner5 from '@src/static/img/partner5.png';
-import partner6 from '@src/static/img/partner6.png';
-import partner7 from '@src/static/img/partner7.png';
-import partner8 from '@src/static/img/partner8.png';
+import partner1 from '@public/static/img/partner1.png';
+import partner2 from '@public/static/img/partner2.png';
+import partner3 from '@public/static/img/partner3.png';
+import partner4 from '@public/static/img/partner4.png';
+import partner5 from '@public/static/img/partner5.png';
+import partner6 from '@public/static/img/partner6.png';
+import partner7 from '@public/static/img/partner7.png';
+import partner8 from '@public/static/img/partner8.png';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

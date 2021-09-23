@@ -3,13 +3,13 @@ import { Box, CardMedia, Typography } from '@mui/material/';
 import { makeStyles } from '@mui/styles';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import life1 from '@src/static/img/life1.png';
-import life2 from '@src/static/img/life2.png';
-import life3 from '@src/static/img/life3.png';
-import life4 from '@src/static/img/life4.png';
-import life5 from '@src/static/img/life5.png';
-import life6 from '@src/static/img/life6.png';
-import life7 from '@src/static/img/life7.png';
+import life1 from '@public/static/img/life1.png';
+import life2 from '@public/static/img/life2.png';
+import life3 from '@public/static/img/life3.png';
+import life4 from '@public/static/img/life4.png';
+import life5 from '@public/static/img/life5.png';
+import life6 from '@public/static/img/life6.png';
+import life7 from '@public/static/img/life7.png';
 
 const responsive = {
   desktop: {

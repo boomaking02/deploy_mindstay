@@ -4,7 +4,7 @@ import { Theme } from '@mui/material/styles';
 import { makeStyles, createStyles } from '@mui/styles';
 import Image from 'next/image';
 import Link from 'next/link';
-import bathIcon from '@src/static/img/icon/baht.png';
+import bathIcon from '@public/static/img/icon/baht.png';
 
 type LiftStyleProps = {
   resort: { id: number; name: string; tags: Array<string>; price: number };

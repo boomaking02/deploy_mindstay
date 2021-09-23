@@ -2,10 +2,10 @@ import React from 'react';
 import { Box, Typography, Avatar, Grid } from '@mui/material/';
 import { styled, createTheme } from '@mui/material/styles';
 import 'react-multi-carousel/lib/styles.css';
-import team1 from '@src/static/img/team1.png';
-import team2 from '@src/static/img/team2.png';
-import team3 from '@src/static/img/team3.png';
-import teamDefault from '@src/static/img/teamDefault.png';
+import team1 from '@public/static/img/team1.png';
+import team2 from '@public/static/img/team2.png';
+import team3 from '@public/static/img/team3.png';
+import teamDefault from '@public/static/img/teamDefault.png';
 
 const theme = createTheme();
 
