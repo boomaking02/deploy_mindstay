@@ -34,14 +34,14 @@ import { TransitionProps } from '@mui/material/transitions';
 import { createStyles, makeStyles } from '@mui/styles';
 import Link from 'next/link';
 import ReactPlayer from 'react-player/youtube';
-import checkinicon from '@public/static/img/checkinicon.png';
-import contentImage from '@public/static/img/content.png';
-import resicon from '@public/static/img/resicon.png';
-import room1Image from '@public/static/img/room1.png';
-import room2Image from '@public/static/img/room2.png';
-import room3Image from '@public/static/img/room3.png';
-import swimicon from '@public/static/img/swimicon.png';
-import room4Image from '@public/static/img/test2.png';
+import checkinicon from '@src/static/img/checkinicon.png';
+import contentImage from '@src/static/img/content.png';
+import resicon from '@src/static/img/resicon.png';
+import room1Image from '@src/static/img/room1.png';
+import room2Image from '@src/static/img/room2.png';
+import room3Image from '@src/static/img/room3.png';
+import swimicon from '@src/static/img/swimicon.png';
+import room4Image from '@src/static/img/test2.png';
 import Room from '@src/components/Room';
 
 const useStyles = makeStyles((theme: Theme) =>

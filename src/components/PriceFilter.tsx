@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Radio, FormControlLabel, Typography, RadioGroup } from '@mui/material';
 import Image from 'next/image';
-import money from '@public/static/img/icon/money.png';
+import money from '@src/static/img/icon/money.png';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 type PriceFilterProps = {

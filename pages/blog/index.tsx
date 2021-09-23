@@ -5,7 +5,7 @@ import MuiLink from '@mui/material/Link';
 import { Theme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 import Link from 'next/link';
-import contentImage from '@public/static/img/content.png';
+import contentImage from '@src/static/img/content.png';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

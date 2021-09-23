@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Radio, FormControlLabel, Typography, RadioGroup } from '@mui/material';
 import Image from 'next/image';
-import pet from '@public/static/img/icon/pet.png';
+import pet from '@src/static/img/icon/pet.png';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 type PedFilterProps = {

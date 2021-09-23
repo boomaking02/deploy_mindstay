@@ -43,12 +43,12 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
 import Link from 'next/link';
 import router, { useRouter } from 'next/router';
-import checkedImage from '@public/static/img/checked.png';
-import langCN from '@public/static/img/icon/langCN.png';
-import langEN from '@public/static/img/icon/langEN.png';
-import langTH from '@public/static/img/icon/langTH.png';
-import logo from '@public/static/img/logo.png';
-import logoW from '@public/static/img/logoW.png';
+import checkedImage from '@src/static/img/checked.png';
+import langCN from '@src/static/img/icon/langCN.png';
+import langEN from '@src/static/img/icon/langEN.png';
+import langTH from '@src/static/img/icon/langTH.png';
+import logo from '@src/static/img/logo.png';
+import logoW from '@src/static/img/logoW.png';
 
 const theme = createTheme();
 

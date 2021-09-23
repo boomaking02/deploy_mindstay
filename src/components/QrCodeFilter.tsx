@@ -2,8 +2,8 @@ import React from 'react';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import { Box, Grid, Typography, CardMedia, Button } from '@mui/material';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import linew from '@public/static/img/linew.png';
-import qr from '@public/static/img/qr.png';
+import linew from '@src/static/img/linew.png';
+import qr from '@src/static/img/qr.png';
 
 const QrCodeFilter: React.FC = () => {
   return (

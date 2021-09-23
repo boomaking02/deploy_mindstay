@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Grid, Radio, Checkbox, FormControlLabel, Typography, CardMedia } from '@mui/material';
 import Image from 'next/image';
-import checkboxIcon from '@public/static/img/checkbox.svg';
-import checkboxIconChecked from '@public/static/img/checkbox_checked.svg';
-import exp from '@public/static/img/icon/exp.png';
+import checkboxIcon from '@src/static/img/checkbox.svg';
+import checkboxIconChecked from '@src/static/img/checkbox_checked.svg';
+import exp from '@src/static/img/icon/exp.png';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 type TypeFilterProps = {

@@ -4,9 +4,9 @@ import { Box, Button, Grid, Link } from '@mui/material/';
 import { Theme } from '@mui/material/styles';
 import { makeStyles, createStyles } from '@mui/styles';
 import classNames from 'classnames';
-import room1 from '@public/static/img/room1.png';
-import room2 from '@public/static/img/room2.png';
-import room3 from '@public/static/img/room3.png';
+import room1 from '@src/static/img/room1.png';
+import room2 from '@src/static/img/room2.png';
+import room3 from '@src/static/img/room3.png';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
