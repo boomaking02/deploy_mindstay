@@ -9,14 +9,14 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, CardMedia, Container, Grid, Stack, Typography, Button } from '@mui/material';
 import { createTheme, styled } from '@mui/material/styles';
-import Ac from '@public/static/img/ac.png';
-import LineIcon from '@public/static/img/line.png';
-import pm1Icon from '@public/static/img/pm1.png';
-import pm2Icon from '@public/static/img/pm2.png';
-import pm3Icon from '@public/static/img/pm3.png';
-import pm4Icon from '@public/static/img/pm4.png';
-import pm5Icon from '@public/static/img/pm5.png';
-import pm6Icon from '@public/static/img/pm6.png';
+import Ac from '@src/static/img/ac.png';
+import LineIcon from '@src/static/img/line.png';
+import pm1Icon from '@src/static/img/pm1.png';
+import pm2Icon from '@src/static/img/pm2.png';
+import pm3Icon from '@src/static/img/pm3.png';
+import pm4Icon from '@src/static/img/pm4.png';
+import pm5Icon from '@src/static/img/pm5.png';
+import pm6Icon from '@src/static/img/pm6.png';
 
 const theme = createTheme();
 

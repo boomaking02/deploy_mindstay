@@ -6,7 +6,7 @@ import { Theme } from '@mui/material/styles';
 import { makeStyles, createStyles } from '@mui/styles';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import image1 from '@public/static/img/test1.png';
+import image1 from '@src/static/img/test1.png';
 
 type ResortProps = {
   resort: { id: number; name: string; bedroom: number; bathroom: number; image?: Array<string>; price: number };

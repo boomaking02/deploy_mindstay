@@ -3,7 +3,7 @@ import { Grid, Box, Button } from '@mui/material/';
 import { Theme } from '@mui/material/styles';
 import { makeStyles, createStyles } from '@mui/styles';
 import Link from 'next/link';
-import image1 from '@public/static/img/test1.png';
+import image1 from '@src/static/img/test1.png';
 
 type ReviewProps = {
   review: { id: number; title: string; content: string };

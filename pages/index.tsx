@@ -11,13 +11,13 @@ import { createStyles, makeStyles } from '@mui/styles';
 import ReactPlayer from 'react-player/youtube';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import header1 from '@public/static/img/header1.png';
-import header2 from '@public/static/img/header2.png';
 import InterestCarousel from '@src/components/interestCarousel';
 import LifeStyle from '@src/components/lifeStyleCarousel';
 import Partners from '@src/components/partners';
 import RecommendCarousel from '@src/components/recommendCarousel';
 import TeamManagement from '@src/components/teamManagement';
+import header1 from '@src/static/img/header1.png';
+import header2 from '@src/static/img/header2.png';
 
 const useStylesReddit = makeStyles((theme: Theme) =>
   createStyles({

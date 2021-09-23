@@ -27,7 +27,12 @@ module.exports = {
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier', 'import', 'jsx-a11y'],
   rules: {
     'react/jsx-props-no-spreading': 'off',
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-filename-extension': 'off',

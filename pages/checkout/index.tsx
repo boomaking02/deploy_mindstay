@@ -24,7 +24,7 @@ import {
 import { Theme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 import Link from 'next/link';
-import room1Image from '@public/static/img/room1.png';
+import room1Image from '@src/static/img/room1.png';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

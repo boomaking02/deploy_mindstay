@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Box } from '@mui/material/';
 import { Theme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
-import room1 from '@public/static/img/room1.png';
+import room1 from '@src/static/img/room1.png';
 
 type RoomProps = {
   room: { id: number; name: string; bed: number; bathroom: number; price: number };

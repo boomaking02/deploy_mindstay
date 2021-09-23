@@ -3,7 +3,7 @@ import { Box, Button, CardMedia, Grid, Paper, Typography, CardContent, Card, Con
 import { Theme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 import Link from 'next/link';
-import checkedImage from '@public/static/img/checked.png';
+import checkedImage from '@src/static/img/checked.png';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
