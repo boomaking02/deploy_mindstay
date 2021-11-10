@@ -10,8 +10,8 @@ type PedFilterProps = {
 
 const PetFilter: React.FC<PedFilterProps> = ({ title }: PedFilterProps) => {
   return (
-    <Grid container sx={{ mt: 3 }}>
-      <Grid item sm={12}>
+    <Grid container sx={{ mt: 3, fontFamily: 'Prompt' }}>
+      <Grid item xs={12}>
         <Box sx={{ fontWeight: 'fontWeightBold', fontSize: 24, display: 'flex' }}>
           <Box component="span" sx={{ alignSelf: 'center', width: '20px', mr: '0.5rem' }}>
             <Image src={pet} />
@@ -26,13 +26,37 @@ const PetFilter: React.FC<PedFilterProps> = ({ title }: PedFilterProps) => {
         <RadioGroup row name="ped" defaultValue="1">
           <FormControlLabel
             value="อนุญาต"
-            control={<Radio color="default" />}
-            label={<Typography noWrap>อนุญาต</Typography>}
+            control={
+              <Radio
+                sx={{
+                  '&.Mui-checked': {
+                    color: 'black',
+                  },
+                }}
+              />
+            }
+            label={
+              <Typography noWrap sx={{ fontFamily: 'Prompt' }}>
+                อนุญาต
+              </Typography>
+            }
           />
           <FormControlLabel
             value="ไม่อนุญาต"
-            control={<Radio color="default" />}
-            label={<Typography noWrap>ไม่อนุญาต</Typography>}
+            control={
+              <Radio
+                sx={{
+                  '&.Mui-checked': {
+                    color: 'black',
+                  },
+                }}
+              />
+            }
+            label={
+              <Typography noWrap sx={{ fontFamily: 'Prompt' }}>
+                ไม่อนุญาต
+              </Typography>
+            }
           />
         </RadioGroup>
       </Grid>

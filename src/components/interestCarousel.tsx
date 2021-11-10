@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, CardMedia, Typography, Link } from '@mui/material/';
+import { Box, CardMedia, Typography } from '@mui/material/';
 import { makeStyles } from '@mui/styles';
+import Link from 'next/link';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import int1 from '@src/static/img/int1.png';
@@ -31,30 +32,30 @@ const useStyles = makeStyles(() => ({
     pointerEvents: 'none',
     cursor: 'pointer',
   },
+  textTitle: { fontSize: '1.1 rem', fontWeight: 500, marginTop: 3, color: '#222222' },
 }));
 const InterestCarousel: React.FC = () => {
   const classStyle = useStyles();
   return (
     <Carousel responsive={responsive} draggable arrows={false} partialVisible>
-      <Box px={1} pb={10} height="100%">
-        <Link href="/interest">
-          <CardMedia component="img" image={int1.src} className={classStyle.imgCover} />
-        </Link>
-        <Typography variant="h6">แอดเวนเจอร์</Typography>
-      </Box>
-
-      <Box px={1} pb={10} height="100%">
-        <Link href="/interest">
-          <CardMedia component="img" image={int2.src} className={classStyle.imgCover} />
-        </Link>
-        <Typography variant="h6">ใกล้ชิดสัตว์</Typography>
-      </Box>
-
-      <Box px={1} pb={10} height="100%">
+      <Box px={1} height="100%">
         <Link href="/interest">
           <CardMedia component="img" image={int3.src} className={classStyle.imgCover} />
         </Link>
-        <Typography variant="h6">กิจกรรมเฉพาะกรุงเทพ</Typography>
+        <Typography className={classStyle.textTitle}>กิจกรรมในกรุงเทพ</Typography>
+      </Box>
+      <Box px={1} height="100%">
+        <Link href="/interest">
+          <CardMedia component="img" image={int1.src} className={classStyle.imgCover} />
+        </Link>
+        <Typography className={classStyle.textTitle}>แอดเวนเจอร์</Typography>
+      </Box>
+
+      <Box px={1} height="100%">
+        <Link href="/interest">
+          <CardMedia component="img" image={int2.src} className={classStyle.imgCover} />
+        </Link>
+        <Typography className={classStyle.textTitle}>ใกล้ชิดสัตว์</Typography>
       </Box>
     </Carousel>
   );

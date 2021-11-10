@@ -4,11 +4,9 @@ import { Theme } from '@mui/material/styles';
 import { makeStyles, createStyles } from '@mui/styles';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ResortProps } from '@src/models/resort.model';
 import bathIcon from '@src/static/img/icon/baht.png';
-
-type LiftStyleProps = {
-  resort: { id: number; name: string; tags: Array<string>; price: number };
-};
+import ImageSlider from './ImageSlider';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -52,29 +50,48 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const ResortLifeStyle: React.FC<LiftStyleProps> = ({ resort }: LiftStyleProps) => {
+const ResortLifeStyle: React.FC<ResortProps> = ({ ...resort }: ResortProps) => {
+  const min = Math.min(...resort.rooms?.map((room) => room.reservationPrice));
+  const max = Math.max(...resort.rooms?.map((room) => room.reservationPrice));
   const classes = useStyles();
+  let minPrice = 0;
+  let maxPrice = 0;
+  if (min !== Number.POSITIVE_INFINITY && max !== Number.NEGATIVE_INFINITY) {
+    minPrice = min;
+    maxPrice = max;
+  }
+
   return (
     <Box>
-      <Grid item sm={5} className={classes.resortDetail}>
-        <Link href="/product">
-          <Box>
-            <Image src={bathIcon} alt="icon" />
-            <Box>
-              <Box>{resort.name}</Box>
-              <Box color="#867F7F">{resort.tags?.join(' ')}</Box>
-            </Box>
-            <Box className={classes.resortPrice}>
-              <Box width="25px" mr="0.5rem">
-                <Image src={bathIcon} alt="icon" />
+      <Grid container>
+        <Grid item xs={12} md={7}>
+          <ImageSlider
+            resortId={resort.id}
+            images={resort.images}
+            handleOpenDialog={() => {
+              throw new Error('Function not implemented.');
+            }}
+          />
+        </Grid>
+        <Grid item xs={12} md={5}>
+          <Link href="/product">
+            <Box className={classes.resortDetail}>
+              <Box>
+                <Box>{resort.name}</Box>
+                <Box color="#867F7F">{resort.resortTags?.join(' ')}</Box>
               </Box>
-              <Box fontWeight="bold" mr="0.5rem">
-                {resort.price.toLocaleString()}
+              <Box className={classes.resortPrice}>
+                <Box width="25px" mr="0.5rem">
+                  <Image src={bathIcon} alt="icon" />
+                </Box>
+                <Box fontWeight="bold" mr="0.5rem">
+                  {minPrice && maxPrice ? `${minPrice.toLocaleString()} - ${max.toLocaleString()}` : ''}
+                </Box>
+                / คืน
               </Box>
-              / คืน
             </Box>
-          </Box>
-        </Link>
+          </Link>
+        </Grid>
       </Grid>
     </Box>
   );

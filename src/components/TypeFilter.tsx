@@ -1,8 +1,6 @@
 import React from 'react';
-import { Box, Grid, Radio, Checkbox, FormControlLabel, Typography, CardMedia } from '@mui/material';
+import { Box, Grid, Radio, Checkbox, FormControlLabel, Typography } from '@mui/material';
 import Image from 'next/image';
-import checkboxIcon from '@src/static/img/checkbox.svg';
-import checkboxIconChecked from '@src/static/img/checkbox_checked.svg';
 import exp from '@src/static/img/icon/exp.png';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -14,15 +12,13 @@ type TypeFilterProps = {
 
 const TypeFilter: React.FC<TypeFilterProps> = ({ title, inputType, items }: TypeFilterProps) => {
   return (
-    <Grid container sx={{ mt: 3 }}>
+    <Grid container sx={{ mt: 3, fontFamily: 'Prompt' }}>
       <Grid item sm={12}>
         <Box sx={{ fontWeight: 'fontWeightBold', fontSize: 24, display: 'flex' }}>
-          <Box component="span" sx={{ alignSelf: 'center', width: '20px', mr: '0.5rem' }}>
+          <Box sx={{ alignSelf: 'center', width: '20px', mr: '0.5rem' }}>
             <Image src={exp} />
           </Box>
-          <Box component="span" alignSelf="center">
-            {title}
-          </Box>
+          <Box alignSelf="center">{title}</Box>
         </Box>
       </Grid>
 
@@ -32,14 +28,28 @@ const TypeFilter: React.FC<TypeFilterProps> = ({ title, inputType, items }: Type
             <FormControlLabel
               control={
                 <Checkbox
-                  icon={<CardMedia component="img" src={checkboxIcon.src} sx={{ width: '20px' }} />}
-                  checkedIcon={<CardMedia component="img" src={checkboxIconChecked.src} sx={{ width: '20px' }} />}
+                  sx={{
+                    '&.Mui-checked': {
+                      color: 'black',
+                    },
+                  }}
                 />
               }
-              label={<Typography noWrap>{item.label}</Typography>}
+              label={
+                <Typography noWrap sx={{ fontFamily: 'Prompt' }}>
+                  {item.label}
+                </Typography>
+              }
             />
           ) : (
-            <FormControlLabel control={<Radio />} label={<Typography noWrap>{item.label}</Typography>} />
+            <FormControlLabel
+              control={<Radio />}
+              label={
+                <Typography noWrap sx={{ fontFamily: 'Prompt' }}>
+                  {item.label}
+                </Typography>
+              }
+            />
           );
         return (
           <Grid item xs={6} md={12} key={item.id}>

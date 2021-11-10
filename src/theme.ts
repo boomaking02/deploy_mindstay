@@ -5,12 +5,15 @@ const theme = createTheme({
     primary: {
       main: '#F05D76',
     },
+    success: {
+      main: '#85c341',
+    },
     background: {
       default: '#fff',
     },
   },
   typography: {
-    fontFamily: ['Prompt'].join(','),
+    fontFamily: ['Bai Jamjuree', 'Prompt', 'Roboto'].join(','),
   },
   components: {
     MuiListItem: {
@@ -18,7 +21,6 @@ const theme = createTheme({
         root: {
           '&.Mui-selected': {
             backgroundColor: 'transparent',
-            color: '#F05D76',
           },
         },
       },

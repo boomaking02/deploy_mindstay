@@ -7,10 +7,11 @@ import PersonIcon from '@mui/icons-material/Person';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, CardMedia, Container, Grid, Stack, Typography, Button } from '@mui/material';
+import { Box, CardMedia, Container, Grid, Stack, Typography, Button, Divider } from '@mui/material';
 import { createTheme, styled } from '@mui/material/styles';
 import Ac from '@src/static/img/ac.png';
-import LineIcon from '@src/static/img/line.png';
+import dbd from '@src/static/img/bns_registered.png';
+import LineIcon from '@src/static/img/icon/line.png';
 import pm1Icon from '@src/static/img/pm1.png';
 import pm2Icon from '@src/static/img/pm2.png';
 import pm3Icon from '@src/static/img/pm3.png';
@@ -24,7 +25,7 @@ const FooterRoot = styled('footer')({
   backgroundColor: '#272727',
   color: '#fff',
   padding: theme.spacing(4, 0),
-  fontFamily: 'Prompt',
+  fontFamily: 'Bai Jamjuree',
   zIndex: 999,
 });
 const flexCenter = { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' };
@@ -34,41 +35,41 @@ const Footer: React.FC = () => {
       <FooterRoot>
         <Container maxWidth="xl">
           <Grid container>
-            <Grid item xs={12} sm={5} sx={{ borderRight: { xs: 'none', sm: '1px solid white' }, mb: 3 }}>
+            <Grid item xs={12} sm={4} sx={{ borderRight: { xs: 'none', sm: '1px solid white' }, mb: 3 }}>
               <Box sx={{ px: 5 }}>
-                <CardMedia component="img" image={Ac.src} sx={{ width: '100%' }} />
-                <Typography variant="h6" sx={{ my: 1 }}>
+                <Box sx={{ display: 'flex', pl: 3, justifyContent: 'center' }}>
+                  <CardMedia component="img" image={Ac.src} sx={{ width: '100%' }} />
+                </Box>
+
+                <Typography variant="h5" sx={{ my: 1, mt: 4, fontFamily: 'Prompt' }}>
                   ช่องทางการชำระ
                 </Typography>
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} ml={2}>
                   <Box sx={flexCenter}>
-                    <CardMedia component="img" image={pm1Icon.src} sx={{ height: '30px' }} />
+                    <CardMedia component="img" image={pm1Icon.src} sx={{ height: '30px', objectFit: 'contain' }} />
                   </Box>
                   <Box sx={flexCenter}>
-                    <CardMedia component="img" image={pm2Icon.src} sx={{ height: '30px' }} />
+                    <CardMedia component="img" image={pm2Icon.src} sx={{ height: '30px', objectFit: 'contain' }} />
                   </Box>
                   <Box sx={flexCenter}>
-                    <CardMedia component="img" image={pm3Icon.src} sx={{ height: '30px' }} />
+                    <CardMedia component="img" image={pm3Icon.src} sx={{ height: '30px', objectFit: 'contain' }} />
                   </Box>
                   <Box sx={flexCenter}>
-                    <CardMedia component="img" image={pm4Icon.src} sx={{ height: '30px' }} />
+                    <CardMedia component="img" image={pm4Icon.src} sx={{ height: '30px', objectFit: 'contain' }} />
                   </Box>
                   <Box sx={flexCenter}>
-                    <CardMedia component="img" image={pm5Icon.src} sx={{ height: '30px' }} />
+                    <CardMedia component="img" image={pm5Icon.src} sx={{ height: '30px', objectFit: 'contain' }} />
                   </Box>
                   <Box sx={flexCenter}>
-                    <CardMedia component="img" image={pm6Icon.src} sx={{ height: '30px' }} />
+                    <CardMedia component="img" image={pm6Icon.src} sx={{ height: '30px', objectFit: 'contain' }} />
                   </Box>
                 </Stack>
               </Box>
             </Grid>
-            <Grid item xs={12} sm>
-              <Grid container spacing={1} sx={{ pl: 2 }}>
+            <Grid item xs={12} sm sx={{ mt: 4 }}>
+              <Grid container spacing={1} sx={{ pl: 5 }}>
                 <Grid item xs={12} sm={4} sx={{ mb: 3 }}>
-                  <Box mb={2}>
-                    <Typography variant="h5">เกี่ยวกับ</Typography>
-                  </Box>
-                  <Stack spacing={1}>
+                  <Stack spacing={1} sx={{ fontSize: '0.8rem', color: 'rgba(205,208,209,1.00)' }}>
                     <Box>ช่วยเหลือ & คำแนะนำ</Box>
                     <Box>คำถามที่พบบ่อย</Box>
                     <Box>เป็นพาร์ทเนอร์กับเรา</Box>
@@ -79,10 +80,7 @@ const Footer: React.FC = () => {
                   </Stack>
                 </Grid>
                 <Grid item xs={12} sm={4} sx={{ mb: 3 }}>
-                  <Box mb={2}>
-                    <Typography variant="h5">Token Pages</Typography>
-                  </Box>
-                  <Stack spacing={1}>
+                  <Stack spacing={1} sx={{ fontSize: '0.8rem', color: 'rgba(205,208,209,1.00)' }}>
                     <Box>Contract</Box>
                     <Box>Whitepaper </Box>
                     <Box>Tokenomics</Box>
@@ -91,26 +89,32 @@ const Footer: React.FC = () => {
                   </Stack>
                 </Grid>
                 <Grid item xs={12} sm={4} sx={{ mb: 3 }}>
-                  <Box mb={2}>
-                    <Typography variant="h5">Term & policies</Typography>
-                  </Box>
-                  <Stack spacing={1}>
+                  <Stack spacing={1} sx={{ fontSize: '0.8rem', color: 'rgba(205,208,209,1.00)' }}>
                     <Box>นโยบายความเป็นส่วนตัว</Box>
                     <Box>ข้อกำหนดการใช้บริการ</Box>
                     <Box>นโยบายเกี่ยวกับคุกกี้</Box>
                   </Stack>
                 </Grid>
                 <Grid item sm={4} sx={{ display: { xs: 'none', sm: 'inline' } }} />
-                <Grid item xs={12} sm={8}>
-                  <Grid container spacing={3}>
-                    <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={8} sx={{ mt: { xs: 0, md: '-4.6rem' } }}>
+                  <Divider sx={{ border: '1px solid #F8E8E8', opacity: '0.5', mb: 2 }} />
+                  <Grid
+                    container
+                    spacing={1}
+                    justifyContent="center"
+                    alignItems="center"
+                    sx={{ minWidth: { xs: '100%', md: '850px' }, ml: { xs: 0, md: '-14rem' } }}
+                  >
+                    <Grid item xs={12} sm={3}>
                       <Box sx={flexCenter}>
                         <Button variant="contained" color="primary" size="large" sx={{ borderRadius: 4 }} fullWidth>
-                          <Typography variant="h6">ติดต่อเรา</Typography>
+                          <Typography variant="h6" sx={{ fontFamily: 'Prompt' }}>
+                            ติดต่อเรา
+                          </Typography>
                         </Button>
                       </Box>
                     </Grid>
-                    <Grid item xs={12} sm={8}>
+                    <Grid item xs={12} sm={5}>
                       <Typography variant="h6" sx={{ fontStyle: 'italic', mb: 1 }}>
                         Mindstay Journey Co., Ltd
                       </Typography>
@@ -119,7 +123,7 @@ const Footer: React.FC = () => {
                           <PersonIcon />
                         </Box>
                         <Box>
-                          <Typography variant="body2">
+                          <Typography sx={{ fontSize: '0.8rem', fontWeight: 200 }}>
                             818/10 Indy 2, Soi Pracha Uthit 90, Nai Khlong Bang Pla Kot, Phra Samut Chedi District,
                             Samut Prakan 10290
                           </Typography>
@@ -130,7 +134,7 @@ const Footer: React.FC = () => {
                           <PhoneInTalkIcon />
                         </Box>
                         <Box>
-                          <Typography variant="body2">082 5322 491</Typography>
+                          <Typography sx={{ fontSize: '0.8rem', fontWeight: 200 }}>082 5322 491</Typography>
                         </Box>
                       </Stack>
                       <Stack direction="row" spacing={2}>
@@ -138,9 +142,12 @@ const Footer: React.FC = () => {
                           <EmailIcon />
                         </Box>
                         <Box>
-                          <Typography variant="body2">Mindstay@gmail.co.th</Typography>
+                          <Typography sx={{ fontSize: '0.8rem', fontWeight: 200 }}>info@mindstay.co.th</Typography>
                         </Box>
                       </Stack>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                      <CardMedia component="img" image={dbd.src} />
                     </Grid>
                   </Grid>
                 </Grid>

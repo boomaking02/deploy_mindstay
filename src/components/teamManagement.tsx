@@ -16,11 +16,10 @@ const AvatarLarge = styled(Avatar)({
 const TeamManagement: React.FC = () => {
   return (
     <>
-      {/* mobile */}
-      <Box sx={{ mt: 5, mb: 10, display: { xs: 'flex', md: 'none' }, justifyContent: 'center' }}>
-        <Grid container spacing={3}>
+      <Box sx={{ mt: 3, mb: 3 }}>
+        <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
           {/* 1 */}
-          <Grid item xs={6}>
+          <Grid item xs={6} md={3}>
             <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
               <Grid item xs={12}>
                 <AvatarLarge alt="team" src={team1.src} />
@@ -38,7 +37,7 @@ const TeamManagement: React.FC = () => {
             </Grid>
           </Grid>
           {/* 2 */}
-          <Grid item xs={6}>
+          <Grid item xs={6} md={3}>
             <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
               <Grid item xs={12}>
                 <AvatarLarge alt="team" src={teamDefault.src} />
@@ -55,8 +54,12 @@ const TeamManagement: React.FC = () => {
               </Grid>
             </Grid>
           </Grid>
+        </Grid>
+      </Box>
+      <Box sx={{ mt: 3, mb: 3, display: 'flex', justifyContent: 'center' }}>
+        <Grid container spacing={3}>
           {/* 3 */}
-          <Grid item xs={6}>
+          <Grid item xs={6} md={3}>
             <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
               <Grid item xs={12}>
                 <AvatarLarge alt="team" src={teamDefault.src} />
@@ -74,7 +77,7 @@ const TeamManagement: React.FC = () => {
             </Grid>
           </Grid>
           {/* 4 */}
-          <Grid item xs={6}>
+          <Grid item xs={6} md={3}>
             <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
               <Grid item xs={12}>
                 <AvatarLarge alt="team" src={team2.src} />
@@ -92,7 +95,7 @@ const TeamManagement: React.FC = () => {
             </Grid>
           </Grid>
           {/* 5 */}
-          <Grid item xs={6}>
+          <Grid item xs={6} md={3}>
             <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
               <Grid item xs={12}>
                 <AvatarLarge alt="team" src={team3.src} />
@@ -110,7 +113,7 @@ const TeamManagement: React.FC = () => {
             </Grid>
           </Grid>
           {/* 6 */}
-          <Grid item xs={6}>
+          <Grid item xs={6} md={3}>
             <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
               <Grid item xs={12}>
                 <AvatarLarge alt="team" src={teamDefault.src} />
@@ -128,119 +131,6 @@ const TeamManagement: React.FC = () => {
             </Grid>
           </Grid>
         </Grid>
-      </Box>
-      {/* desktop */}
-      <Box sx={{ mb: 10, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
-        {/* 1 */}
-        <Box mx={6}>
-          <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
-            <Grid item xs={12}>
-              <AvatarLarge alt="team" src={team1.src} />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" align="center">
-                Kabin Autchariyasuwan
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body2" align="center">
-                Founder , Director of operations
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
-        {/* 2 */}
-        <Box mx={6}>
-          <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
-            <Grid item xs={12}>
-              <AvatarLarge alt="team" src={teamDefault.src} />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" align="center">
-                ?
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body2" align="center">
-                Co-founder , Travel influencer
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
-      {/* 3 */}
-      <Box sx={{ mb: 10, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
-        <Box mx={6}>
-          <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
-            <Grid item xs={12}>
-              <AvatarLarge alt="team" src={teamDefault.src} />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" align="center">
-                ?
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body2" align="center">
-                Head developer
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
-        {/* 4 */}
-        <Box mx={6}>
-          <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
-            <Grid item xs={12}>
-              <AvatarLarge alt="team" src={team2.src} />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" align="center">
-                Atiwat Onsuwan
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body2" align="center">
-                Data scientist
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
-        {/* 5 */}
-        <Box mx={6}>
-          <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
-            <Grid item xs={12}>
-              <AvatarLarge alt="team" src={team3.src} />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" align="center">
-                Tarun Kumar
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body2" align="center">
-                Chief Accountant
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
-        {/* 6 */}
-        <Box mx={6}>
-          <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
-            <Grid item xs={12}>
-              <AvatarLarge alt="team" src={teamDefault.src} />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" align="center">
-                ?
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body2" align="center">
-                Blockchain Consultant
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
       </Box>
     </>
   );

@@ -1,26 +1,19 @@
 import React from 'react';
-import { Box, CardMedia, Typography } from '@mui/material/';
+import { Box, CardMedia, Link, Typography } from '@mui/material/';
 import { makeStyles } from '@mui/styles';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import life1 from '@src/static/img/life1.png';
-import life2 from '@src/static/img/life2.png';
-import life3 from '@src/static/img/life3.png';
-import life4 from '@src/static/img/life4.png';
-import life5 from '@src/static/img/life5.png';
-import life6 from '@src/static/img/life6.png';
-import life7 from '@src/static/img/life7.png';
+import { ResortCategoryProps } from '@src/models/resort.model';
 
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 4,
-    partialVisibilityGutter: 40,
+    items: 6,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 3,
-    partialVisibilityGutter: 40,
+    partialVisibilityGutter: 30,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -29,61 +22,32 @@ const responsive = {
   },
 };
 
+type LifeStyleProps = {
+  liftStyles: Array<ResortCategoryProps>;
+};
+
 const useStyles = makeStyles(() => ({
-  imgCover: { height: '100%', objectFit: 'cover', borderRadius: 5, pointerEvents: 'none' },
+  imgCover: { height: 'auto', objectFit: 'cover', borderRadius: 5, pointerEvents: 'none' },
+  textTitle: { fontSize: '1.1 rem', fontWeight: 500, marginTop: 1, color: '#222222' },
+  link: { textDecoration: 'none' },
 }));
-const LifeStyleCarousel: React.FC = () => {
+
+const LifeStyleCarousel: React.FC<LifeStyleProps> = ({ ...props }: LifeStyleProps) => {
   const classStyle = useStyles();
   return (
     <Carousel responsive={responsive} arrows={false} swipeable draggable partialVisible centerMode={false}>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life1.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          ทะเล
-        </Typography>
-      </Box>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life2.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          เรียบหรู Luxury
-        </Typography>
-      </Box>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life3.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          ภูเขา
-        </Typography>
-      </Box>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life4.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          บ้านหลังใหญ่
-        </Typography>
-      </Box>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life5.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          รถบ้าน/เต้นด์โดม
-        </Typography>
-      </Box>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life6.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          ตะลุยแอดเวนเจอร์
-        </Typography>
-      </Box>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life7.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          ผจญภัย
-        </Typography>
-      </Box>
-      <Box px={1} pb={10} height="100%">
-        <CardMedia component="img" image={life7.src} className={classStyle.imgCover} />
-        <Typography align="center" variant="h6">
-          เหมาทั้งหลัง
-        </Typography>
-      </Box>
+      {props.liftStyles.map((style) => {
+        return (
+          <Box px={1} height="100%" key={style.id}>
+            <Link href={`/life-style?resortCategories=${style.id}`} className={classStyle.link}>
+              <CardMedia component="img" image={style.image} className={classStyle.imgCover} />
+              <Typography align="center" className={classStyle.textTitle}>
+                {style.name}
+              </Typography>
+            </Link>
+          </Box>
+        );
+      })}
     </Carousel>
   );
 };

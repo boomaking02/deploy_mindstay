@@ -17,7 +17,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ title, items }: PriceFilterPr
           <Box component="span" sx={{ alignSelf: 'center', width: '20px', mr: '0.5rem' }}>
             <Image src={money} />
           </Box>
-          <Box component="span" alignSelf="center">
+          <Box component="span" alignSelf="center" sx={{ fontFamily: 'Prompt' }}>
             {title}
           </Box>
         </Box>
@@ -27,8 +27,20 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ title, items }: PriceFilterPr
           const input = (
             <FormControlLabel
               value={String(item.id)}
-              control={<Radio color="default" />}
-              label={<Typography noWrap>{item.label}</Typography>}
+              control={
+                <Radio
+                  sx={{
+                    '&.Mui-checked': {
+                      color: 'black',
+                    },
+                  }}
+                />
+              }
+              label={
+                <Typography noWrap sx={{ fontFamily: 'Prompt' }}>
+                  {item.label}
+                </Typography>
+              }
             />
           );
           return (

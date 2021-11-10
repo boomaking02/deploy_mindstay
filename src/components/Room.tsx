@@ -1,9 +1,12 @@
 import React from 'react';
-import { People } from '@mui/icons-material';
-import { Box, Button, Grid, Link } from '@mui/material/';
+import KingBedIcon from '@mui/icons-material/KingBed';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import SingleBedIcon from '@mui/icons-material/SingleBed';
+import { Box, Button, Grid, Link, CardMedia, Stack } from '@mui/material/';
 import { Theme } from '@mui/material/styles';
 import { makeStyles, createStyles } from '@mui/styles';
 import classNames from 'classnames';
+import { RoomProps } from '@src/models/room.model';
 import room1 from '@src/static/img/room1.png';
 import room2 from '@src/static/img/room2.png';
 import room3 from '@src/static/img/room3.png';
@@ -36,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingRight: theme.spacing(4),
     },
     bgImage: {
-      height: '150px',
+      height: '200px',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -61,75 +64,104 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-type RoomProps = {
-  room: { id: number; name: string; guest: number; price: number };
+const getBedTypeName = (type: string) => {
+  const mapping: { [key: string]: string } = {
+    'King Bed': 'เตียงคิงไซส์',
+    'Queen Bed': 'เตียงควีนไซส์',
+    'Double Bed': 'เตียงคู่',
+    'Mattress Bed': 'เตียงฟูก',
+  };
+  return mapping[type];
 };
 
-const Room: React.FC<RoomProps> = ({ room }: RoomProps) => {
-  const classes = useStyles();
+const getBedTypeImage = (type: string) => {
+  const mapping: { [key: string]: React.ReactNode } = {
+    'King Bed': <KingBedIcon />,
+    'Queen Bed': <SingleBedIcon />,
+    'Double Bed': <KingBedIcon />,
+    'Mattress Bed': <SingleBedIcon />,
+  };
 
+  return mapping[type];
+};
+
+const Room: React.FC<RoomProps> = ({ ...props }: RoomProps) => {
+  const classes = useStyles();
+  const guest = [];
+  for (let i = 0; i < props.guest; i += 1) {
+    guest.push(<PersonOutlineOutlinedIcon />);
+  }
   return (
     <>
       <Box className={classes.root}>
         <Box fontWeight="bold" mb={2}>
-          {room.name}
+          {props.name}
         </Box>
         <Box>
           <Grid container>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={5}>
               <Box className={classNames(classes.bgImage, classes.imgTop)} />
               <Box display="flex" mt={0.5}>
                 <Box className={classNames(classes.bgImage, classes.imgLeft)} />
                 <Box className={classNames(classes.bgImage, classes.imgRight)} />
               </Box>
             </Grid>
-            <Grid item xs={12} md={8} className={classes.roomDetailWrapper}>
+            <Grid item xs={12} md={7} className={classes.roomDetailWrapper}>
               <Box fontWeight="bold" mb={3} px={2}>
-                {room.name}
+                {props.name}
               </Box>
               <Grid container className={classNames(classes.roomDetail, classes.line)}>
-                <Grid item sm={5}>
-                  เตียงคู่
+                <Grid item sm={9}>
+                  <Grid container spacing={2}>
+                    {props.bedType?.map((type) => {
+                      return (
+                        <Grid item sm={4}>
+                          <Box display="flex" justifyContent="flex-start" alignItems="center" fontSize="1rem">
+                            {getBedTypeImage(type)} {getBedTypeName(type)}
+                          </Box>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
                 </Grid>
                 <Grid item sm={3}>
-                  <Box display="flex" justifyContent="flex-start" alignItems="center">
-                    <People /> {room.guest} ผู้เข้าพัก
-                  </Box>
-                </Grid>
-                <Grid item sm={4}>
-                  <Box color="primary.main" textAlign="right">
-                    (5 ห้องว่าง)
+                  <Box display="flex" justifyContent="flex-end" alignItems="center">
+                    {guest.map((comp) => comp)}
                   </Box>
                 </Grid>
               </Grid>
-              <Grid container className={classes.roomDetail}>
-                <Grid item sm={5}>
-                  <Box>อาหารเช้าฟรี 2 ท่าน</Box>
-                  <Box>Wifi ฟรี</Box>
-                </Grid>
-                <Grid item sm={3}>
-                  <Box color="#808080">ไม่สามารถคืนเงินได้</Box>
-                </Grid>
-                <Grid item sm={4}>
-                  <Box textAlign="right">
-                    <Box fontSize="1rem">ราคาเริ่มต้น</Box>
-                    <Box color="primary.main" fontWeight="bold" fontSize="1.5rem">
-                      {room.price.toLocaleString()}
-                    </Box>
-                    <Box color="primary.main">/ คืน</Box>
-                    <Box fontSize="0.75rem">รวมภาษีแล้ว</Box>
-                  </Box>
-                </Grid>
+              <Grid container spacing={1} sx={{ fontSize: '1rem' }} alignItems="center">
+                {props.resortProperties
+                  ?.filter((p) => p.type === 'facility')
+                  .map((property) => {
+                    return (
+                      <Grid item xs={4}>
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <CardMedia component="img" image={property.image} sx={{ width: '30px', mr: 1 }} />
+                          {property.name}
+                        </Box>
+                      </Grid>
+                    );
+                  })}
               </Grid>
               <Grid container className={classes.roomDetail}>
                 <Grid item sm={12}>
-                  <Box textAlign="right" mt={4}>
-                    <Link href="/product">
+                  <Stack direction="row" spacing={2} alignItems="center" mt={4}>
+                    <Box fontSize="1.3rem" fontWeight="bold">
+                      เริ่มต้น
+                    </Box>
+                    <Box color="primary.main" fontWeight="bold" fontSize="1.5rem">
+                      THB {props.reservationPrice?.toLocaleString()}
+                    </Box>
+                    <Box fontSize="1.3rem" fontWeight="bold">
+                      / คืน
+                    </Box>
+                    <Link href={`/room/${props.id}`}>
                       <Button color="primary" variant="contained" className={classes.selectButton}>
                         เลือก
                       </Button>
                     </Link>
-                  </Box>
+                  </Stack>
                 </Grid>
               </Grid>
             </Grid>
